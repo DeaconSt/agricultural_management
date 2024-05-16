@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar cultivo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h2>Causas</h2>
+    <ul>
+        <li>Falta de acceso a tecnología y herramientas adecuadas para la gestión de cultivos.</li>
+        <li>Limitada capacitación y conocimiento sobre prácticas agrícolas modernas.</li>
+        <li>Condiciones climáticas impredecibles que afectan la producción y el rendimiento de los cultivos.</li>
+        <li>Escasez de recursos hídricos y métodos ineficientes de riego.</li>
+    </ul>
+    <h2>Impactos</h2>
+    <ul>
+        <li>Ineficiencias en la producción agrícola.</li>
+        <li>Pérdidas económicas para los agricultores.</li>
+        <li>Deterioro del medio ambiente debido al uso inadecuado de recursos naturales.</li>
+        <li>Dificultades en la planificación de cultivos y gestión de la cadena de suministro agrícola.</li>
+    </ul>
+    
+    
+    <h1>Agregar un nuevo cultivo</h1>
+    <form action="{{ url_for('add_crop') }}" method="POST">
+        <div class="form-group">
+            <label for="name">Nombre del cultivo:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="date">Fecha de siembra:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <button type="submit" class="btn">Agregar cultivo</button>
+    </form>
+    <div class = "botones_general">
+        <a href="{{ url_for('index') }}" class="btn">Volver</a>
+        <a href="{{ url_for('list_crops') }}" class="btn">Lista de cultivos</a>
+    </div>
+
+    </div>
+</body>
+</html>

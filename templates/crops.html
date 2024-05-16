@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de cultivos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class = "container">
+    <h1>Lista de cultivos</h1>
+    <ul>
+        {% if crops %}
+        {% for crop in crops %}
+        <li>
+            {{ crop.name }} - Plantado en: {{ crop.planting_date }} - Estado: {{ crop.status }}
+            <ul>
+                <li>Temperatura: {{ crop.temperature }} °C</li>
+                <li>Humedad: {{ crop.humidity }} %</li>
+            </ul>
+            <form action="{{ url_for('delete_crop', crop_id=crop.id) }}" method="post">
+                <button type="submit">Eliminar</button>
+            </form>
+        </li>
+        {% endfor %}
+        {% else %}
+        <li>No hay cultivos registrados</li>
+        {% endif %}
+    </ul>
+    <div> 
+        <h2>Soluciones</h2>
+    <p>La solución propuesta es desarrollar un software de gestión agrícola que ayude a los agricultores a planificar, monitorear y optimizar sus cultivos. Además, se pueden implementar las siguientes medidas:</p>
+    <ul>
+        <li>Brindar acceso a tecnologías agrícolas modernas, como sistemas de riego automatizados, sensores de cultivos, y software de gestión.</li>
+        <li>Capacitar a los agricultores en prácticas agrícolas sostenibles y métodos de conservación del suelo.</li>
+        <li>Promover el uso eficiente de recursos hídricos y la implementación de sistemas de riego más efectivos.</li>
+        <li>Facilitar el acceso a información climática y asesoramiento técnico para una mejor planificación de cultivos.</li>
+        <li>Fomentar la diversificación de cultivos y la adopción de variedades resistentes a condiciones climáticas adversas.</li>
+    </ul>
+        <h2>Beneficios</h2>
+        <ul>
+            <li>Mejora en la eficiencia y productividad agrícola.</li>
+            <li>Reducción de pérdidas económicas y ambientales.</li>
+            <li>Facilita la toma de decisiones informadas para los agricultores.</li>
+            <li>Contribuye a la sostenibilidad y rentabilidad de la agricultura.</li>
+        </ul>
+    </div>
+    
+    <a href="{{ url_for('index') }}">Volver</a>
+
+    </div>
+</body>
+</html>

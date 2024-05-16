@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #A2C40E;
+    color: #333;
+    line-height: 1.6; /* Ajuste de interlineado */
+
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+h1{
+text-align: center;
+color: #29ABE2;
+
+}
+h2 {
+    color: #29ABE2;
+    
+}
+h2 {
+    margin-top: 30px;
+}
+p, ul {
+    margin-bottom: 20px;
+}
+ul {
+    padding-left: 20px;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+    border: #007bff solid 1px;
+    padding: 5px 10px;
+    display: inline-block; /* Esto hace que los botones estén en línea */
+    border-radius: 5px;
+    background-color: #007bff;
+
+}
+a:hover {
+    text-decoration: underline;
+}
+/* Estilos para los inputs y el botón */
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"],
+.btn {
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+button[type="submit"]:hover,
+.btn:hover {
+    background-color: #007bff;
+}
+
+.botones_general{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

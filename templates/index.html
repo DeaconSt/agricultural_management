@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agricultural Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+   <div class="container">
+        
+    <h1>Sistema de Gestión Agrícola</h1>
+    <h2>Descripción</h2>
+    <p>En un sector rural de Colombia, los agricultores enfrentan dificultades en la gestión y seguimiento de cultivos debido a la falta de tecnología y herramientas adecuadas. Esto conduce a ineficiencias en la producción, pérdidas económicas y dificultad en la planificación de cultivos.</p>
+    <div> 
+        <h2>¿Cómo podemos ayudar?</h2>
+        <p>Con nuestro sistema de gestión agrícola, los agricultores pueden:</p>
+        <ul>
+            <li>Registrar y hacer seguimiento de sus cultivos.</li>
+            <li>Monitorear las condiciones climáticas y el estado de los cultivos.</li>
+            <li>Recibir recomendaciones y alertas para mejorar la producción.</li>
+            <li>Optimizar la planificación de cultivos y la gestión de recursos.</li>
+        </ul> 
+    </div>
+    <div> 
+        <h2>¿Cómo funciona?</h2>
+        <p>Nuestro sistema de gestión agrícola permite a los agricultores:</p>
+        <ul>
+            <li>Registrar y monitorear sus cultivos.</li>
+            <li>Recibir alertas y recomendaciones personalizadas.</li>
+            <li>Visualizar datos climáticos y del suelo en tiempo real.</li>
+            <li>Optimizar la planificación de cultivos y la gestión de recursos.</li>
+        </ul>
+    </div>
+    
+    <h2 style="text-align: center;">Cultivos actuales</h2>
+    
+    <ul>
+        {% if crops %}
+            {% for crop in crops %}
+                <li>{{ crop.name }} - Plantado en: {{ crop.planting_date }} - Estado: {{ crop.status }}</li>
+            {% endfor %}
+        {% else %}
+            <li>No hay cultivos registrados</li>
+        {% endif %}
+    </ul>
+    <div class = "botones_general">
+    <a href="{{ url_for('add_crop') }}">Agregar nuevo cultivo</a>
+    <a href="{{ url_for('list_crops') }}">Lista de cultivos</a>
+    </div>
+</div>
+</body>
+</html>
